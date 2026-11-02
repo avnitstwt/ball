@@ -1,0 +1,32 @@
+* { box-sizing: border-box; }
+html, body { min-height: 100%; margin: 0; background: #070913; color: #eef1ff; font-family: ui-rounded, "SF Pro Rounded", "SF Pro Display", system-ui, -apple-system, BlinkMacSystemFont, sans-serif; }
+body { overflow-x: hidden; }
+button { font: inherit; }
+.dashboard { min-height: 100vh; display: grid; grid-template-columns: minmax(270px, 540px) minmax(280px, 430px); justify-content: center; gap: 28px; padding: 24px; align-items: start; }
+.preview-shell { position: relative; width: min(100%, 540px); aspect-ratio: 9 / 16; border-radius: 22px; overflow: hidden; background: #0f1328; box-shadow: 0 24px 80px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.1); }
+.audio-floating-bar { position: absolute; top: 14px; right: 14px; z-index: 50; display: flex; gap: 8px; }
+.audio-toggle-btn { display: inline-flex; align-items: center; gap: 8px; background: rgba(14, 18, 38, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: #fff; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 20px; padding: 8px 16px; font-size: 13px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4); transition: all 0.2s ease; }
+.audio-toggle-btn:hover { background: rgba(28, 36, 75, 0.95); border-color: #6cf2c2; }
+.audio-toggle-btn.playing { border-color: #69f4bc; color: #69f4bc; box-shadow: 0 0 12px rgba(105, 244, 188, 0.35); }
+body.capture .audio-floating-bar { display: none !important; }
+#stream-canvas { display: block; width: 100%; height: 100%; background: #0c1022; }
+.development-panel { position: sticky; top: 24px; max-height: calc(100vh - 48px); overflow: auto; padding: 22px; border: 1px solid rgba(255,255,255,.1); border-radius: 18px; background: rgba(17,20,38,.94); box-shadow: 0 18px 56px rgba(0,0,0,.4); }
+.development-panel h1 { margin: 0 0 4px; font-size: 24px; }
+.development-panel h2 { margin: 22px 0 10px; font-size: 17px; color: #bfc8ff; }
+.local-only { margin: 0 0 18px; color: #8c96b8; font-size: 13px; }
+.control-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.control-grid button { min-height: 42px; border: 1px solid rgba(255,255,255,.12); border-radius: 10px; color: #eef1ff; background: #222944; cursor: pointer; }
+.control-grid button:hover { background: #30395c; }
+.control-grid button:focus-visible { outline: 3px solid #6cf2c2; outline-offset: 2px; }
+.diagnostics-grid { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 7px 14px; margin: 0; font-size: 13px; }
+.diagnostics-grid dt { color: #9099ba; }
+.diagnostics-grid dd { margin: 0; color: #f1f3ff; text-align: right; font-variant-numeric: tabular-nums; }
+.connection-state { margin: 18px 0 0; color: #7ff3c7; font-size: 13px; }
+body.capture { width: 100vw; height: 100vh; overflow: hidden; }
+body.capture .dashboard { display: block; width: 100vw; height: 100vh; min-height: 0; padding: 0; }
+body.capture .preview-shell { width: 100vw; height: 100vh; max-width: none; border-radius: 0; box-shadow: none; }
+body.capture .development-panel { display: none !important; }
+@media (max-width: 900px) {
+  .dashboard { grid-template-columns: minmax(260px, 540px); padding: 14px; }
+  .development-panel { position: static; max-height: none; }
+}

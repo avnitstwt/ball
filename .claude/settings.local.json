@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(curl *)",
+      "Bash(yt-dlp *)",
+      "Bash(pkill -f \"yt-dlp.*background-music\")",
+      "Read(//Users/niteesh/Downloads/**)",
+      "Bash(ffmpeg *)"
+    ]
+  }
+}

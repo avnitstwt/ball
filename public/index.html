@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <title>Ball Drop Endless Live</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="dashboard" aria-label="Ball Drop Endless Live local dashboard">
+    <section class="preview-shell" aria-label="9 by 16 stream preview">
+      <div class="audio-floating-bar">
+        <button id="audio-toggle-btn" class="audio-toggle-btn" type="button">🔇 Audio: OFF (Click to Play)</button>
+      </div>
+      <canvas id="stream-canvas" width="1080" height="1920" aria-label="Live game canvas"></canvas>
+    </section>
+    <aside id="development-panel" class="development-panel" hidden>
+      <h1>Local Controls</h1>
+      <p class="local-only">Development only · no shell access</p>
+      <div class="control-grid">
+        <button data-action="pause">Pause</button>
+        <button data-action="resume">Resume</button>
+        <button data-action="spawn">Spawn next</button>
+        <button data-action="merge">Force safe merge</button>
+        <button data-action="recovery">Recovery test</button>
+        <button data-action="gameover">Test game-over</button>
+        <button data-action="reset">Reset session</button>
+        <button data-action="guides">Toggle guides</button>
+        <button id="fullscreen-button">Fullscreen preview</button>
+        <button id="mute-button">Unmute preview audio</button>
+      </div>
+      <h2>Diagnostics</h2>
+      <dl id="diagnostics-grid" class="diagnostics-grid"></dl>
+      <p id="connection-state" class="connection-state">Connecting locally…</p>
+    </aside>
+  </main>
+  <script src="/client.js" defer></script>
+</body>
+</html>
